@@ -10,6 +10,11 @@
     align-items: center;
     justify-content: space-between;
 }
+.filterHeader img{
+width: 16px;
+height: 16px;
+}
+
 .filterOption{
     display: flex;
     flex-direction: column;
