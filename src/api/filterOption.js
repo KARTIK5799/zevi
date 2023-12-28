@@ -1,0 +1,1 @@
+const brand=["Mango", "H&M", "Adidas", "Allen Solly", "Nike", "Zara"];
