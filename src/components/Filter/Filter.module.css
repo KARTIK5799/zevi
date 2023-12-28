@@ -1,7 +1,7 @@
 .filterContainer{
     width: 300px;
-    margin: 3rem;
-    padding: 2rem;
+    margin: 1.5rem;
+    padding: 1.5rem;
 }
 
 .filterHeader{
@@ -11,8 +11,13 @@
     justify-content: space-between;
 }
 .filterHeader img{
-width: 16px;
-height: 16px;
+width: 25px;
+height: 25px;
+transition: transform 0.3s;
+}
+
+.filterHeader.open img{
+    transform: rotate(180deg);
 }
 
 .filterOption{
