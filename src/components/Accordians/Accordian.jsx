@@ -9,9 +9,9 @@ const Accordian = ({title,content}) => {
   return (
     <div>
       <h4 onClick={handleToggle}>{title}</h4>
-      
+      {isOpen && <div>{content}</div>}
     </div>
   )
 }
 
-export default Accordian
+export default Accordian;
