@@ -1,12 +1,11 @@
 import React from 'react'
-import Search from './components/Search/Search'
-import Logo from './components/Logo/Logo'
+import SearchPage from './Pages/SearchPage/SearchPage'
 
 const App = () => {
   return (
 
     <div>
-      <Logo/>
+   <SearchPage/>
       
     </div>
   )

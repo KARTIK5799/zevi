@@ -1,0 +1,5 @@
+.navBar{
+display: flex;
+justify-content: end;
+padding: 3rem;
+}
