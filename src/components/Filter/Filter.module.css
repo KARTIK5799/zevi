@@ -1,12 +1,15 @@
 .filterContainer{
     width: 300px;
-    margin: 1.5rem;
     padding: 1.5rem;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto; 
 }
 
 .filterOption{
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    margin: 1rem 0 1rem 0;
+    margin: 1rem 0;
 }

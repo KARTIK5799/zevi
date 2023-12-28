@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Filter.module.css";
 import Accordian from "../Accordians/Accordian";
 import { Brands, Prices, Ratings } from "../../api/filterOption";
 
 const Filter = () => {
-  console.log(Brands);
   const BrandOptions = () => {
     return (
       <div className={styles.filterOption}>
