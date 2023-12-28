@@ -21,10 +21,10 @@ const Filter = () => {
   const PriceRangeOption = () => {
     return (
       <div className={styles.filterOption}>
-        {Brands.map((brand) => (
-          <label key={brand}>
-            <input type="checkbox" name={brand} id={brand} />
-            {brand}
+        {Prices.map((price) => (
+          <label key={price}>
+            <input type="checkbox" name={price} id={price} />
+            {price}
           </label>
         ))}
       </div>
@@ -34,10 +34,10 @@ const Filter = () => {
   const RatingOption = () => {
     return (
       <div className={styles.filterOption}>
-        {Brands.map((brand) => (
-          <label key={brand}>
-            <input type="checkbox" name={brand} id={brand} />
-            {brand}
+        {Ratings.map((rate) => (
+          <label key={rate}>
+            <input type="checkbox" name={rate} id={rate} />
+            {rate}
           </label>
         ))}
       </div>

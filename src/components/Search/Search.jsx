@@ -4,7 +4,7 @@ import styles from "./Search.module.css"
 
 const Search = ({onClick,onBlur,productStyle}) => {
   return (
-    <form action="submit" className={styles.form}>
+    <form action="submit" className={productStyle? styles.productForm:styles.searchForm}>
         <div className={productStyle? styles.productFormContent:styles.searchFormContent}>
           <input type="text" placeholder="Search" className={styles.inputField} onClick={onClick} onBlur={onBlur}/>
           <button type="submit" className={styles.searchButton}>
