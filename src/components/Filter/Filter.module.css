@@ -4,22 +4,6 @@
     padding: 1.5rem;
 }
 
-.filterHeader{
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.filterHeader img{
-width: 25px;
-height: 25px;
-transition: transform 0.3s;
-}
-
-.filterHeader.open img{
-    transform: rotate(180deg);
-}
-
 .filterOption{
     display: flex;
     flex-direction: column;

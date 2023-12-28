@@ -1,25 +1,60 @@
 import React, { useState } from "react";
-import downArrow from "../../assets/downArrow.png";
 import styles from "./Filter.module.css";
 import Accordian from "../Accordians/Accordian";
-import {Brands,Prices,Ratings} from '../../api/filterOption'
+import { Brands, Prices, Ratings } from "../../api/filterOption";
 
 const Filter = () => {
-console.log(Brands)
-    const BrandOptions=()=>{
-        return(
-            <div className={styles.filterOption}>
+  console.log(Brands);
+  const BrandOptions = () => {
+    return (
+      <div className={styles.filterOption}>
+        {Brands.map((brand) => (
+          <label key={brand}>
+            <input type="checkbox" name={brand} id={brand} />
+            {brand}
+          </label>
+        ))}
+      </div>
+    );
+  };
 
-            </div>
-        )
-    }
-  
+  const PriceRangeOption = () => {
+    return (
+      <div className={styles.filterOption}>
+        {Brands.map((brand) => (
+          <label key={brand}>
+            <input type="checkbox" name={brand} id={brand} />
+            {brand}
+          </label>
+        ))}
+      </div>
+    );
+  };
+
+  const RatingOption = () => {
+    return (
+      <div className={styles.filterOption}>
+        {Brands.map((brand) => (
+          <label key={brand}>
+            <input type="checkbox" name={brand} id={brand} />
+            {brand}
+          </label>
+        ))}
+      </div>
+    );
+  };
+
   return (
     <div className={styles.filterContainer}>
       <h1>Search Results</h1>
 
+      <Accordian title={"Brands"} content={<BrandOptions />} />
+      <hr />
+      <Accordian title={"Price Range"} content={<PriceRangeOption/>} />
+      <hr />
+      <Accordian title={"Rating"} content={<RatingOption />} />
 
-      <Accordian title={"Brands"} content={<BrandOptions/>}/>
+
       {/* <div>
         <h4
           className={`${styles.filterHeader} ${
