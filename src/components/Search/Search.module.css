@@ -1,0 +1,36 @@
+.form {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .formContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    border-radius: 1rem;
+    padding: 0 1rem;
+  }
+  
+  .inputField {
+    width: 70%;
+    font-size: 1rem;
+    border: none;
+    background-color: transparent;
+  }
+  
+  .searchButton {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    margin: 0 10px 0 0;
+    cursor: pointer;
+  }
+  
+  .searchButton img {
+    height: 32px;
+  }
+    
+
+  
