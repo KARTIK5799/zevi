@@ -9,6 +9,7 @@ const Accordian = ({title,content}) => {
   return (
     <div>
       <h4 onClick={handleToggle}>{title}</h4>
+      
     </div>
   )
 }
