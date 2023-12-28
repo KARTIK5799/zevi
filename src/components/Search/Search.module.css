@@ -15,11 +15,15 @@
   
   .inputField {
     width: 70%;
-    font-size: 1rem;
+    font-size: 1.4rem;
     border: none;
     background-color: transparent;
   }
   
+  .inputField:focus-within {
+    outline: none;
+  } 
+
   .searchButton {
     background-color: transparent;
     border: none;
