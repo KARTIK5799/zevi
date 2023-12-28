@@ -1,0 +1,18 @@
+.filterContainer{
+    width: 300px;
+    margin: 3rem;
+    padding: 2rem;
+}
+
+.filterHeader{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.filterOption{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1rem 0 1rem 0;
+}
