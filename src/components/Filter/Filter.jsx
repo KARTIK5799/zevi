@@ -1,27 +1,26 @@
 import React, { useState } from "react";
 import downArrow from "../../assets/downArrow.png";
 import styles from "./Filter.module.css";
+import Accordian from "../Accordians/Accordian";
+import {Brands,Prices,Ratings} from '../../api/filterOption'
 
 const Filter = () => {
-  const [isBrandsVisible, setIsBrandsVisible] = useState(false);
-  const [isPriceVisible, setIsPriceVisible] = useState(false);
-  const [isRatingVisible, setIsRatingVisible] = useState(false);
+console.log(Brands)
+    const BrandOptions=()=>{
+        return(
+            <div className={styles.filterOption}>
 
-  const handleClickBrand = () => {
-    setIsBrandsVisible(!isBrandsVisible);
-  };
-
-  const handlePriceRange = () => {
-    setIsPriceVisible(!isPriceVisible);
-  };
-
-  const handleRating = () => {
-    setIsRatingVisible(!isRatingVisible);
-  };
+            </div>
+        )
+    }
+  
   return (
     <div className={styles.filterContainer}>
       <h1>Search Results</h1>
-      <div>
+
+
+      <Accordian title={"Brands"} content={<BrandOptions/>}/>
+      {/* <div>
         <h4
           className={`${styles.filterHeader} ${
             isBrandsVisible ? styles.open : null
@@ -121,7 +120,7 @@ const Filter = () => {
             </label>
           </div>
         ) : null}
-      </div>
+      </div> */}
     </div>
   );
 };
