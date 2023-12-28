@@ -18,7 +18,7 @@ const handleSearchBlur=()=>{
   return (
     <div className={styles.container}>
       <div className={styles.navSection}>
-        <NavBar />
+        <NavBar place={"search"}/>
       </div>
       <div className={styles.searchSection}>
         <Search onClick={handleSearchClick} onBlur={handleSearchBlur} />

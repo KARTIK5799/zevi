@@ -2,10 +2,10 @@ import React from 'react'
 import SearchIcon from '../../assets/search.png'
 import styles from "./Search.module.css"
 
-const Search = ({onClick,onBlur}) => {
+const Search = ({onClick,onBlur,productStyle}) => {
   return (
     <form action="submit" className={styles.form}>
-        <div className={styles.formContent}>
+        <div className={productStyle? styles.productFormContent:styles.searchFormContent}>
           <input type="text" placeholder="Search" className={styles.inputField} onClick={onClick} onBlur={onBlur}/>
           <button type="submit" className={styles.searchButton}>
             <img src={SearchIcon} alt="Search"/>

@@ -4,13 +4,24 @@
     margin: 0 auto;
   }
   
-  .formContent {
+  .searchFormContent {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: #fff;
     border-radius: 1rem;
     padding: 0 1rem;
+ 
+  }
+
+  .productFormContent{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    border-radius: 1rem;
+    padding: 0 1rem;
+    border: 1px solid #000;
   }
   
   .inputField {

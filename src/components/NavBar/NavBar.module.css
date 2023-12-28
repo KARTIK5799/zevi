@@ -1,5 +1,11 @@
-.navBar{
+.navBarSearch{
 display: flex;
 justify-content: end;
 padding: 3rem;
+}
+
+.navBarProduct{
+    display: flex;
+justify-content: end;
+padding: 1rem;
 }

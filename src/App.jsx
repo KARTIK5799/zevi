@@ -1,14 +1,16 @@
 import React from 'react'
-import SearchPage from './Pages/SearchPage/SearchPage'
+import ProductPage from './Pages/ProductPage/ProductPage'
+
 
 const App = () => {
   return (
 
     <div>
-   <SearchPage/>
-      
+   
+      <ProductPage/>
     </div>
   )
 }
 
 export default App
+
