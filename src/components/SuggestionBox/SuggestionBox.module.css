@@ -6,7 +6,7 @@
 }
 .suggestionBox {
   width: 900px;
-  height: 490px;
+  height: 500px;
   border-radius: 4px;
   background-color: #fff;
   padding: 2rem;
@@ -16,7 +16,6 @@
 .trendSection{
 display: flex;
 flex-direction: column;
-gap: 2rem;
 }
 
 .cardSection{
@@ -27,3 +26,5 @@ gap: 2rem;
     padding: 1rem;
 
 }
+
+

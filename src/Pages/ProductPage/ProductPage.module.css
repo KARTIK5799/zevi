@@ -1,6 +1,6 @@
 .productPage {
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
   }
   
   .productSection {
@@ -10,6 +10,6 @@
     flex-wrap: wrap;
     gap: 1rem;
     max-height: 100vh; 
-    margin: 2rem;
+    margin: 1rem;
   }
   

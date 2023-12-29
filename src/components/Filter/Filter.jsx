@@ -1,16 +1,35 @@
-import React from "react";
+import  { useEffect, useState } from "react";
 import styles from "./Filter.module.css";
 import Accordian from "../Accordians/Accordian";
-import { Brands, Prices, Ratings } from "../../api/filterOption";
+import { Prices, Ratings } from "../../api/filterOption";
+import Products from "../../api/api";
 
-const Filter = () => {
-  const BrandOptions = () => {
+const Filter = ({onFilterChange}) => {
+  const [categories, setCategories] = useState([]);
+
+  const getCategories=async()=>{
+    try {
+      const data=await Products();
+      const uniqueCategories = [...new Set(data.map(product => product.category))];
+      setCategories(uniqueCategories);
+    } catch (error) {
+      console.error(`their is something issue your data ${error}`)
+    }
+
+  }
+
+  useEffect(()=>{
+    getCategories();
+   
+  },[])
+
+  const CategoriesOptions = () => {
     return (
       <div className={styles.filterOption}>
-        {Brands.map((brand) => (
-          <label key={brand}>
-            <input type="checkbox" name={brand} id={brand} />
-            {brand}
+        {categories.map((category) => (
+          <label key={category}>
+            <input type="checkbox" name={category} id={category} />
+            {category}
           </label>
         ))}
       </div>
@@ -47,114 +66,14 @@ const Filter = () => {
     <div className={styles.filterContainer}>
       <h1>Search Results</h1>
 
-      <Accordian title={"Brands"} content={<BrandOptions />} />
+      <Accordian title={"Categories"} content={<CategoriesOptions />} />
       <hr />
       <Accordian title={"Price Range"} content={<PriceRangeOption/>} />
       <hr />
       <Accordian title={"Rating"} content={<RatingOption />} />
 
 
-      {/* <div>
-        <h4
-          className={`${styles.filterHeader} ${
-            isBrandsVisible ? styles.open : null
-          }`}
-          onClick={handleClickBrand}
-        >
-          Brand <img src={downArrow} alt="Brand" />
-        </h4>
-        {isBrandsVisible ? (
-          <div className={styles.filterOption}>
-            <label>
-              {" "}
-              <input type="checkbox" name="Mango" id="" />
-              Mango
-            </label>
-            <label>
-              {" "}
-              <input type="checkbox" name="H&M" id="" />
-              H&M
-            </label>
-            <label>
-              {" "}
-              <input type="checkbox" name="Adidas" id="" />
-              Adidas
-            </label>
-            <label>
-              {" "}
-              <input type="checkbox" name="Allen Solly" id="" />
-              Allen Solly
-            </label>
-          </div>
-        ) : null}
-      </div>
-      <hr />
-      <div>
-        <h4
-          className={`${styles.filterHeader} ${
-            isPriceVisible ? styles.open : null
-          }`}
-          onClick={handlePriceRange}
-        >
-          Price Range
-          <img src={downArrow} alt="Price Range" />
-        </h4>
-        {isPriceVisible ? (
-          <div className={styles.filterOption}>
-            <label>
-              {" "}
-              <input type="checkbox" name="under500" id="" />
-              Under 500
-            </label>
-            <label>
-              {" "}
-              <input type="checkbox" name="1000to3000" id="" />
-              1000 To 3000
-            </label>
-          </div>
-        ) : null}
-      </div>
-      <hr />
-      <div>
-        <h4
-          className={`${styles.filterHeader} ${
-            isRatingVisible ? styles.open : null
-          }`}
-          onClick={handleRating}
-        >
-          Rating
-          <img src={downArrow} alt="Rating" />
-        </h4>
-        {isRatingVisible ? (
-          <div className={styles.filterOption}>
-            <label>
-              {" "}
-              <input type="checkbox" name="5star" id="" />
-              Under 500
-            </label>
-            <label>
-              {" "}
-              <input type="checkbox" name="4star" id="" />
-              1000 To 3000
-            </label>
-            <label>
-              {" "}
-              <input type="checkbox" name="3star" id="" />
-              Under 500
-            </label>
-            <label>
-              {" "}
-              <input type="checkbox" name="2star" id="" />
-              Under 500
-            </label>
-            <label>
-              {" "}
-              <input type="checkbox" name="1star" id="" />
-              Under 500
-            </label>
-          </div>
-        ) : null}
-      </div> */}
+      
     </div>
   );
 };
