@@ -5,7 +5,7 @@ import demoImg from "../../assets/demo.png";
 import FilledHeart from '../../assets/Heart.png';
 import EmptyHeart from '../../assets/emptyHeart.png'
 
-const Card = ({ type, title, image, price }) => {
+const Card = ({ type, title, image, price ,rating,count}) => {
   const isSuggestion = type === 'suggestion';
   const isProduct = type === 'product';
 
@@ -33,6 +33,7 @@ setToggle(!toggle)
          <div className={styles.productDetails}>
          <h3>{title.slice(0, 20)}</h3>
           <p className={styles.price}><span className={styles.canceledPrice}>RS.{Math.floor(price + 57)}</span> RS.{price}</p>
+          <p>{rating}</p><p>({count})</p>
          </div>
          <div className={styles.overlay}>
             <div>View Product</div>

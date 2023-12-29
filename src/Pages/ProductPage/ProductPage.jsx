@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import NavBar from "../../components/NavBar/NavBar";
 import Filter from "../../components/Filter/Filter";
 import Products from "../../api/api";
@@ -7,8 +7,8 @@ import styles from "./ProductPage.module.css";
 
 const ProductPage = () => {
   const [products, setProducts] = useState([]);
-  const [filterdProducts,setFilterdProducts]=([]);
-  
+  const [filteredProducts, setFilteredProducts] = useState([]);
+
   const fetchData = async () => {
     try {
       const data = await Products();
@@ -22,13 +22,14 @@ const ProductPage = () => {
     fetchData();
   }, []);
 
-  const handleFilterChange=(filters)=>{
-    const filterd=products.filter((product)=>{
-      return(
-        filters.categories.
-      )
-    })
-  }
+  const handleFilterChange = (filters) => {
+    const filtered = products.filter((product) => {
+      return (
+        (filters.categories.length === 0 || filters.categories.includes(product.category)) 
+       
+    )});
+    setFilteredProducts(filtered);
+  };
 
   return (
     <div>
@@ -38,7 +39,21 @@ const ProductPage = () => {
           <Filter onFilterChange={handleFilterChange} />
         </div>
         <div className={styles.productSection}>
-          {products &&
+          {filteredProducts.length > 0 ? (
+            filteredProducts.map((product) => (
+              <div key={product.id}>
+                <Card
+                  type={"product"}
+                  id={product.id}
+                  title={product.title}
+                  price={product.price}
+                  image={product.image}
+                  rating={product.rating.rate}
+                  count={product.rating.count}
+                />
+              </div>
+            ))
+          ) : (
             products.map((product) => (
               <div key={product.id}>
                 <Card
@@ -47,9 +62,12 @@ const ProductPage = () => {
                   title={product.title}
                   price={product.price}
                   image={product.image}
+                  rating={product.rating.rate}
+                  count={product.rating.count}
                 />
               </div>
-            ))}
+            ))
+          )}
         </div>
       </div>
     </div>
